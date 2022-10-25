@@ -13,7 +13,6 @@ function App() {
       .then((response) => response.json())
       .then((result) => {
         setCities(result)
-        console.log(result)
       })
   }, [])
 
@@ -21,10 +20,13 @@ function App() {
     if (cities) {
       const tempName = cities.filter((current) => current.id === id)
       setShowCity(tempName)
-      console.log(showCity)
     }
   }
 
+  function clearCityAndMenu() {
+    setDrop(false)
+    setShowCity(null)
+  }
   return (
     <div className="App">
       <div className="wrapper">
@@ -35,13 +37,6 @@ function App() {
             <h4>Pick a city</h4>
           )}
 
-          {/* {showCity?.map((city) => (
-            <h4 key={city.id}>{city.name}</h4>
-
-          ): (
-            <h4>Pick something</h4>
-          )} */}
-
           {drop !== false ? (
             <img src={arrowUp} alt="" />
           ) : (
@@ -49,7 +44,10 @@ function App() {
           )}
         </div>
         {drop !== false ? (
-          <div onMouseLeave={() => setDrop(false)} className="drop-down-menu">
+          <div
+            onMouseLeave={() => clearCityAndMenu()}
+            className="drop-down-menu"
+          >
             <ul>
               {" "}
               {cities?.map((city) => (
