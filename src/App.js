@@ -10,6 +10,10 @@ import {
   GreenDropMenu,
   GreenListItem,
   DarkListItem,
+  HalloweenBackground,
+  HalloweenDropdown,
+  HalloweenDropMenu,
+  HalloweenListItem,
 } from "./themes/constant.js"
 import { useState, useEffect } from "react"
 
@@ -49,6 +53,12 @@ function App() {
     setDropMenuTag(DarkDropMenu)
     setListItemTag(DarkListItem)
   }
+  function halloweenTheme() {
+    setBackgroundTag(HalloweenBackground)
+    setDropdownTag(HalloweenDropdown)
+    setDropMenuTag(HalloweenDropMenu)
+    setListItemTag(HalloweenListItem)
+  }
   function clearCityAndMenu() {
     setDrop(false)
     setShowCity(null)
@@ -57,13 +67,13 @@ function App() {
     <BackgroundTag className="App">
       <div className="button-container">
         <button onClick={darkTheme} className="dark-theme">
-          <h4>Pick theme</h4>
+          <h4>Dark theme</h4>
         </button>
-        <button onClick={greenTheme}>
-          <h4>Pick theme</h4>
+        <button onClick={greenTheme} className="green-theme">
+          <h4>Forest theme</h4>
         </button>
-        <button>
-          <h4>Pick theme</h4>
+        <button onClick={halloweenTheme} className="halloween-theme">
+          <h4>Halloween theme</h4>
         </button>
         <button>
           <h4>Pick theme</h4>
