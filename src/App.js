@@ -29,6 +29,20 @@ function App() {
   }
   return (
     <div className="App">
+      <div className="button-container">
+        <button className="dark-theme">
+          <h4>Pick theme</h4>
+        </button>
+        <button>
+          <h4>Pick theme</h4>
+        </button>
+        <button>
+          <h4>Pick theme</h4>
+        </button>
+        <button>
+          <h4>Pick theme</h4>
+        </button>
+      </div>
       <div className="wrapper">
         <div onClick={() => setDrop(true)} className="drop-down">
           {showCity !== null ? (
