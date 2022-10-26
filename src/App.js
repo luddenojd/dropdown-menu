@@ -1,12 +1,14 @@
 import "./App.css"
 import arrowDown from "./img/arrow-down.svg"
 import arrowUp from "./img/arrow-up.svg"
+import { DarkDropdown, GreenDropdown } from "./themes/constant.js"
 import { useState, useEffect } from "react"
 
 function App() {
   const [drop, setDrop] = useState(false)
   const [cities, setCities] = useState(null)
   const [showCity, setShowCity] = useState(null)
+  const [style, setStyle] = useState("green")
 
   useEffect(() => {
     fetch("https://avancera.app/cities/")
@@ -30,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <div className="button-container">
-        <button className="dark-theme">
+        <button onClick={() => setStyle("dark")} className="dark-theme">
           <h4>Pick theme</h4>
         </button>
         <button>
@@ -44,19 +46,41 @@ function App() {
         </button>
       </div>
       <div className="wrapper">
-        <div onClick={() => setDrop(true)} className="drop-down">
-          {showCity !== null ? (
-            showCity.map((city) => <h4 key={city.id}>{city.name}</h4>)
-          ) : (
-            <h4>Pick a city</h4>
-          )}
+        {style === "green" ? (
+          <GreenDropdown onClick={() => setDrop(true)} className="drop-down">
+            {showCity !== null ? (
+              showCity.map((city) => <h4 key={city.id}>{city.name}</h4>)
+            ) : (
+              <h4>Pick a city</h4>
+            )}
 
-          {drop !== false ? (
-            <img src={arrowUp} alt="" />
-          ) : (
-            <img src={arrowDown} alt="" />
-          )}
-        </div>
+            {drop !== false ? (
+              <img src={arrowUp} alt="" />
+            ) : (
+              <img src={arrowDown} alt="" />
+            )}
+          </GreenDropdown>
+        ) : (
+          ""
+        )}
+        {style === "dark" ? (
+          <DarkDropdown onClick={() => setDrop(true)} className="drop-down">
+            {showCity !== null ? (
+              showCity.map((city) => <h4 key={city.id}>{city.name}</h4>)
+            ) : (
+              <h4>Pick a city</h4>
+            )}
+
+            {drop !== false ? (
+              <img src={arrowUp} alt="" />
+            ) : (
+              <img src={arrowDown} alt="" />
+            )}
+          </DarkDropdown>
+        ) : (
+          ""
+        )}
+
         {drop !== false ? (
           <div
             onMouseLeave={() => clearCityAndMenu()}
