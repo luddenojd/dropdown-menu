@@ -54,6 +54,24 @@ export const HalloweenDropdown = styled.div`
     filter: drop-shadow(0 0 0.5rem #252422);
   }
 `
+export const CandyDropdown = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  width: 400px;
+  background: #e06c96;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 22px;
+  &:hover {
+    filter: drop-shadow(0 0 0.5rem #6296c6);
+  }
+`
 export const GreenBackground = styled.div`
   display: flex;
   flex-direction: column;
@@ -80,6 +98,15 @@ export const HalloweenBackground = styled.div`
   width: 100%;
   height: 750px;
   background: #403d39;
+`
+export const CandyBackground = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 750px;
+  background: #cdb4db;
 `
 export const GreenDropMenu = styled.div`
   height: 200px;
@@ -111,6 +138,16 @@ export const HalloweenDropMenu = styled.div`
     filter: drop-shadow(0 0 0.1rem #ccc5b9);
   }
 `
+export const CandyDropMenu = styled.div`
+  height: 200px;
+  width: 440px;
+  background: #a2d2ff;
+  border-radius: 10px;
+  position: absolute;
+  &:hover {
+    filter: drop-shadow(0 0 0.1rem #6296c6);
+  }
+`
 export const GreenListItem = styled.div`
   color: #132a13;
   &:hover {
@@ -131,6 +168,14 @@ export const HalloweenListItem = styled.div`
   &:hover {
     color: #252422;
     background: #ccc5b9;
+    border-radius: 10px;
+  }
+`
+export const CandyListItem = styled.div`
+  color: #252422;
+  &:hover {
+    color: white;
+    background: #e06c96;
     border-radius: 10px;
   }
 `

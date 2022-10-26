@@ -49,7 +49,20 @@ h4 {
 }
 
 .halloween-theme:hover {
-  background: #6ca03f;
+  background: #e37043;
+}
+
+.candy-theme {
+  width: 200px;
+  border-radius: 30px;
+  border: none;
+  background: #e06c96;
+  color: white;
+  font-size: 15px;
+}
+
+.candy-theme:hover {
+  background: #ee97b7;
 }
 
 ul {

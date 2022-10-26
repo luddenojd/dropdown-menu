@@ -2,14 +2,18 @@ import "./App.css"
 import arrowDown from "./img/arrow-down.svg"
 import arrowUp from "./img/arrow-up.svg"
 import {
+  CandyBackground,
+  CandyDropdown,
+  CandyDropMenu,
+  CandyListItem,
   DarkDropdown,
-  GreenDropdown,
-  GreenBackground,
   DarkBackground,
   DarkDropMenu,
+  DarkListItem,
+  GreenDropdown,
+  GreenBackground,
   GreenDropMenu,
   GreenListItem,
-  DarkListItem,
   HalloweenBackground,
   HalloweenDropdown,
   HalloweenDropMenu,
@@ -59,6 +63,12 @@ function App() {
     setDropMenuTag(HalloweenDropMenu)
     setListItemTag(HalloweenListItem)
   }
+  function candyTheme() {
+    setBackgroundTag(CandyBackground)
+    setDropdownTag(CandyDropdown)
+    setDropMenuTag(CandyDropMenu)
+    setListItemTag(CandyListItem)
+  }
   function clearCityAndMenu() {
     setDrop(false)
     setShowCity(null)
@@ -75,8 +85,8 @@ function App() {
         <button onClick={halloweenTheme} className="halloween-theme">
           <h4>Halloween theme</h4>
         </button>
-        <button>
-          <h4>Pick theme</h4>
+        <button onClick={candyTheme} className="candy-theme">
+          <h4>Candy theme</h4>
         </button>
       </div>
       <div className="wrapper">
