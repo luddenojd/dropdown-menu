@@ -14,6 +14,9 @@ export const DarkDropdown = styled.div`
   margin-bottom: 10px;
   position: relative;
   font-size: 22px;
+  &:hover {
+    filter: drop-shadow(0 0 0.5rem #7a7a7a);
+  }
 `
 export const GreenDropdown = styled.div`
   display: flex;
@@ -29,4 +32,60 @@ export const GreenDropdown = styled.div`
   margin-bottom: 10px;
   position: relative;
   font-size: 22px;
+  &:hover {
+    filter: drop-shadow(0 0 0.5rem #132a13);
+  }
+`
+export const GreenBackground = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 750px;
+  background: #31572c;
+`
+export const DarkBackground = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 750px;
+  background: #000000;
+`
+export const GreenDropMenu = styled.div`
+  height: 200px;
+  width: 440px;
+  background: #90a955;
+  border-radius: 10px;
+  position: absolute;
+  &:hover {
+    filter: drop-shadow(0 0 0.1rem #ecf39e);
+  }
+`
+export const DarkDropMenu = styled.div`
+  height: 200px;
+  width: 440px;
+  background: #232323;
+  border-radius: 10px;
+  position: absolute;
+  &:hover {
+    filter: drop-shadow(0 0 0.1rem #ecf39e);
+  }
+`
+export const GreenListItem = styled.div`
+  color: #132a13;
+  &:hover {
+    color: white;
+    background: #4f772d;
+    border-radius: 10px;
+  }
+`
+export const DarkListItem = styled.div`
+  color: white;
+  &:hover {
+    background: #111111;
+    border-radius: 10px;
+  }
 `

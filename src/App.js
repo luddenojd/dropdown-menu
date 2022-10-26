@@ -1,14 +1,26 @@
 import "./App.css"
 import arrowDown from "./img/arrow-down.svg"
 import arrowUp from "./img/arrow-up.svg"
-import { DarkDropdown, GreenDropdown } from "./themes/constant.js"
+import {
+  DarkDropdown,
+  GreenDropdown,
+  GreenBackground,
+  DarkBackground,
+  DarkDropMenu,
+  GreenDropMenu,
+  GreenListItem,
+  DarkListItem,
+} from "./themes/constant.js"
 import { useState, useEffect } from "react"
 
 function App() {
   const [drop, setDrop] = useState(false)
   const [cities, setCities] = useState(null)
   const [showCity, setShowCity] = useState(null)
-  const [style, setStyle] = useState("green")
+  const [BackgroundTag, setBackgroundTag] = useState(DarkBackground)
+  const [DropdownTag, setDropdownTag] = useState(DarkDropdown)
+  const [DropMenuTag, setDropMenuTag] = useState(DarkDropMenu)
+  const [ListItemTag, setListItemTag] = useState(DarkListItem)
 
   useEffect(() => {
     fetch("https://avancera.app/cities/")
@@ -25,17 +37,29 @@ function App() {
     }
   }
 
+  function greenTheme() {
+    setBackgroundTag(GreenBackground)
+    setDropdownTag(GreenDropdown)
+    setDropMenuTag(GreenDropMenu)
+    setListItemTag(GreenListItem)
+  }
+  function darkTheme() {
+    setBackgroundTag(DarkBackground)
+    setDropdownTag(DarkDropdown)
+    setDropMenuTag(DarkDropMenu)
+    setListItemTag(DarkListItem)
+  }
   function clearCityAndMenu() {
     setDrop(false)
     setShowCity(null)
   }
   return (
-    <div className="App">
+    <BackgroundTag className="App">
       <div className="button-container">
-        <button onClick={() => setStyle("dark")} className="dark-theme">
+        <button onClick={darkTheme} className="dark-theme">
           <h4>Pick theme</h4>
         </button>
-        <button>
+        <button onClick={greenTheme}>
           <h4>Pick theme</h4>
         </button>
         <button>
@@ -46,60 +70,39 @@ function App() {
         </button>
       </div>
       <div className="wrapper">
-        {style === "green" ? (
-          <GreenDropdown onClick={() => setDrop(true)} className="drop-down">
-            {showCity !== null ? (
-              showCity.map((city) => <h4 key={city.id}>{city.name}</h4>)
-            ) : (
-              <h4>Pick a city</h4>
-            )}
+        <DropdownTag onClick={() => setDrop(true)} className="drop-down">
+          {showCity !== null ? (
+            showCity.map((city) => <h4 key={city.id}>{city.name}</h4>)
+          ) : (
+            <h4>Pick a city</h4>
+          )}
 
-            {drop !== false ? (
-              <img src={arrowUp} alt="" />
-            ) : (
-              <img src={arrowDown} alt="" />
-            )}
-          </GreenDropdown>
-        ) : (
-          ""
-        )}
-        {style === "dark" ? (
-          <DarkDropdown onClick={() => setDrop(true)} className="drop-down">
-            {showCity !== null ? (
-              showCity.map((city) => <h4 key={city.id}>{city.name}</h4>)
-            ) : (
-              <h4>Pick a city</h4>
-            )}
-
-            {drop !== false ? (
-              <img src={arrowUp} alt="" />
-            ) : (
-              <img src={arrowDown} alt="" />
-            )}
-          </DarkDropdown>
-        ) : (
-          ""
-        )}
+          {drop !== false ? (
+            <img src={arrowUp} alt="" />
+          ) : (
+            <img src={arrowDown} alt="" />
+          )}
+        </DropdownTag>
 
         {drop !== false ? (
-          <div
+          <DropMenuTag
             onMouseLeave={() => clearCityAndMenu()}
             className="drop-down-menu"
           >
             <ul>
               {" "}
               {cities?.map((city) => (
-                <li onClick={() => filterById(city.id)} key={city.id}>
+                <ListItemTag onClick={() => filterById(city.id)} key={city.id}>
                   <h4 className="list-item">{city.name}</h4>
-                </li>
+                </ListItemTag>
               ))}
             </ul>
-          </div>
+          </DropMenuTag>
         ) : (
           ""
         )}
       </div>
-    </div>
+    </BackgroundTag>
   )
 }
 
