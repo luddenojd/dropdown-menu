@@ -77,7 +77,7 @@ function App() {
     <BackgroundTag className="App">
       <div className="button-container">
         <button onClick={darkTheme} className="dark-theme">
-          <h4>Dark theme</h4>
+          <h4>Dark themes</h4>
         </button>
         <button onClick={greenTheme} className="green-theme">
           <h4>Forest theme</h4>
