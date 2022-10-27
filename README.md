@@ -1,4 +1,4 @@
-# Simple dropdown with different themes
+# Simple dropdown with different themes.
 
 React dropdown with styled components for switching between themes.
 Enjoy!
