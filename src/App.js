@@ -20,6 +20,8 @@ import {
   HalloweenListItem,
 } from "./themes/constant.js"
 import { useState, useEffect } from "react"
+import LogRocket from "logrocket"
+LogRocket.init("euaxt6/new-project")
 
 function App() {
   const [drop, setDrop] = useState(false)
