@@ -17,6 +17,9 @@ export const DarkDropdown = styled.div`
   &:hover {
     filter: drop-shadow(0 0 0.5rem #7a7a7a);
   }
+  @media screen and (max-width: 768px) {
+    width: 250px;
+  }
 `
 export const GreenDropdown = styled.div`
   display: flex;
@@ -34,6 +37,9 @@ export const GreenDropdown = styled.div`
   font-size: 22px;
   &:hover {
     filter: drop-shadow(0 0 0.5rem #132a13);
+  }
+  @media screen and (max-width: 768px) {
+    width: 250px;
   }
 `
 export const HalloweenDropdown = styled.div`
@@ -53,6 +59,9 @@ export const HalloweenDropdown = styled.div`
   &:hover {
     filter: drop-shadow(0 0 0.5rem #252422);
   }
+  @media screen and (max-width: 768px) {
+    width: 250px;
+  }
 `
 export const CandyDropdown = styled.div`
   display: flex;
@@ -70,6 +79,9 @@ export const CandyDropdown = styled.div`
   font-size: 22px;
   &:hover {
     filter: drop-shadow(0 0 0.5rem #6296c6);
+  }
+  @media screen and (max-width: 768px) {
+    width: 250px;
   }
 `
 export const GreenBackground = styled.div`
@@ -117,6 +129,9 @@ export const GreenDropMenu = styled.div`
   &:hover {
     filter: drop-shadow(0 0 0.1rem #ecf39e);
   }
+  @media screen and (max-width: 768px) {
+    width: 290px;
+  }
 `
 export const DarkDropMenu = styled.div`
   height: 200px;
@@ -126,6 +141,9 @@ export const DarkDropMenu = styled.div`
   position: absolute;
   &:hover {
     filter: drop-shadow(0 0 0.1rem #7a7a7a);
+  }
+  @media screen and (max-width: 768px) {
+    width: 290px;
   }
 `
 export const HalloweenDropMenu = styled.div`
@@ -137,6 +155,9 @@ export const HalloweenDropMenu = styled.div`
   &:hover {
     filter: drop-shadow(0 0 0.1rem #ccc5b9);
   }
+  @media screen and (max-width: 768px) {
+    width: 290px;
+  }
 `
 export const CandyDropMenu = styled.div`
   height: 200px;
@@ -146,6 +167,9 @@ export const CandyDropMenu = styled.div`
   position: absolute;
   &:hover {
     filter: drop-shadow(0 0 0.1rem #6296c6);
+  }
+  @media screen and (max-width: 768px) {
+    width: 290px;
   }
 `
 export const GreenListItem = styled.div`
